@@ -38,14 +38,20 @@ function inicializaCronometro(){
 		tempoRestante--;
 		$("#tempo-digitacao").text(tempoRestante);
 		if(tempoRestante < 1){
-			campo.attr("disabled", true);	
 			clearInterval(cronometroId);//para a função setInterval, recebe o id como parametro
-			campo.addClass("campo-desativado");//ou toggleClass("campo-desativado")
-			$("#botao-reiniciar").removeAttr("disabled");		
+			finalizaJogo();
 		}
 		}, 1000);
 	});
 }
+
+function finalizaJogo(){
+	campo.attr("disabled", true);	
+	campo.addClass("campo-desativado");//ou toggleClass("campo-desativado")
+	$("#botao-reiniciar").removeAttr("disabled");	
+	inserePlacar();	
+}
+
 
  function reiniciaJogo(){
  	campo.attr("disabled",false);
