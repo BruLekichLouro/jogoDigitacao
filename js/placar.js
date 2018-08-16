@@ -7,6 +7,17 @@ function inserePlacar (){
     var linha = novaLinha(usuario, numPalavras);
     linha.find(".botao-remover").click(removeLinha);
     corpoTabela.append(linha);
+    $(".placar").slideDown(500);
+    scrollPlacar();
+}
+
+function scrollPlacar() {
+    var posicaoPlacar = $(".placar").offset().top;
+
+    $("body").animate( //animando o body animamos a página inteira
+    {
+        scrollTop: posicaoPlacar + "px"
+    }, 1000);
 }
 
 function novaLinha(usuario, palavras){
