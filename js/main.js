@@ -16,6 +16,10 @@ function atualizaTamanhoFrase(){
 	var tamanhoFrase = $("#tamanho-frase");
 	tamanhoFrase.text(numPalavras);
 }
+function atualizaTempoInicial(tempo) {
+	tempoInicial = tempo;
+    $("#tempo-digitacao").text(tempo);
+}
 
 function inicializaContadores(){
 	campo.on("input", function(){
@@ -31,8 +35,8 @@ function inicializaContadores(){
 }
 
 function inicializaCronometro(){
-	var tempoRestante = $("#tempo-digitacao").text();
 	campo.one("focus", function(){ //one escuta o evento apenas uma única vez e para
+		var tempoRestante = $("#tempo-digitacao").text();
 		$("#botao-reiniciar").attr("disabled",true);
 		var cronometroId = setInterval(function(){
 		tempoRestante--;
@@ -67,18 +71,18 @@ function finalizaJogo(){
  };
 
 function inicializaMarcadores() {
-var frase = $(".frase").text();
-campo.on("input", function() {
-    var digitado = campo.val();
-    var comparavel = frase.substr(0 , digitado.length);
+	campo.on("input", function() {
+		var frase = $(".frase").text();
+    	var digitado = campo.val();
+    	var comparavel = frase.substr(0 , digitado.length);
 
-   	if(digitado == comparavel) {
-      campo.addClass("campo-correto");
-      campo.removeClass("campo-errado");
-    } else {
-      campo.addClass("campo-errado");
-      campo.removeClass("campo-correto");
-    }
+   		if(digitado == comparavel) {
+      		campo.addClass("campo-correto");
+      		campo.removeClass("campo-errado");
+    		} else {
+      		campo.addClass("campo-errado");
+      		campo.removeClass("campo-correto");
+    		}
     //Alternativa1:
     //if( frase.startsWith(digitado)) {
  	//	campo.addClass("campo-correto");
