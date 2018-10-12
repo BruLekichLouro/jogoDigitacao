@@ -1,3 +1,4 @@
+$("#botao-placar").click(mostraPlacar);
 $("#botao-sync").click(sincronizaPlacar);
 
 function sincronizaPlacar(){
@@ -42,6 +43,7 @@ function atualizaPlacar(){
 	$.get("http://localhost:3000/placar",function(data){
 	$(data).each(function(){
 		var linha = novaLinha(this.usuario, this.pontos);
+		linha.find(".botao-remover").click(removeLinha);
 		$("tbody").append(linha);
         });
     });
@@ -86,8 +88,6 @@ function removeLinha(){
         linha.remove();
     }, 1000);
 }
-
-$("#botao-placar").click(mostraPlacar);
 
 function mostraPlacar() {
 	$(".placar").stop().slideToggle(600);
