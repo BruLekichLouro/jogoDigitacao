@@ -7,6 +7,7 @@ $(document).ready(function(){//ou $(function(){}); que espera todo conteudo ser 
     inicializaCronometro(); 
     inicializaMarcadores();
     $("#botao-reiniciar").click(reiniciaJogo);
+    atualizaPlacar();
 });
 
 
