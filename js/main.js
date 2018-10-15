@@ -8,6 +8,10 @@ $(document).ready(function(){//ou $(function(){}); que espera todo conteudo ser 
     inicializaMarcadores();
     $("#botao-reiniciar").click(reiniciaJogo);
     atualizaPlacar();
+    $("#usuarios").selectize({
+    create: true,
+    sortField: 'text'
+	});
 });
 
 
