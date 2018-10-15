@@ -14,3 +14,16 @@
 .imagem-jogo {
 	border: 2px solid gray;
 }
+.slider {
+    height: auto;
+}
+
+.slick-prev:before, .slick-next:before{
+    color: darkblue;
+}
+body{
+	color: darkblue;
+}
+h1{
+	color:#4682B4;
+}
