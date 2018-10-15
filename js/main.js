@@ -6,11 +6,17 @@ $(document).ready(function(){//ou $(function(){}); que espera todo conteudo ser 
     inicializaContadores();
     inicializaCronometro(); 
     inicializaMarcadores();
-    $("#botao-reiniciar").click(reiniciaJogo);
     atualizaPlacar();
+    $("#botao-reiniciar").click(reiniciaJogo);
     $("#usuarios").selectize({
-    create: true,
-    sortField: 'text'
+    	create: true,
+    	sortField: 'text'
+	});
+	$(".tooltip-aviso").tooltipster({
+ 
+	});
+	$(".tooltip").tooltipster({
+    	trigger: "custom"
 	});
 });
 
