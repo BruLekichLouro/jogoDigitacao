@@ -25,6 +25,11 @@
 }
 body {
     overflow: scroll;
+    color: darkblue;
+}
+
+h1{
+	color:#4682B4;
 }
 #erro{
     color: red;
