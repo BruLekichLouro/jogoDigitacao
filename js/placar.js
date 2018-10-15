@@ -27,7 +27,7 @@ function novaLinha(usuario, palavras){
 	var colunaUsuario = $("<td>").text(usuario);
 	var colunaPalavras = $("<td>").text(palavras);
 	var colunaRemover = $("<td>");
-	var link = $("<a>").attr("href","#");
+	var link = $("<a>").addClass("botao-remover").attr("href", "#");
 	var icone = $("<i>").addClass("small").addClass("material-icons").text("delete");
 
 	// Icone dentro do <a>
